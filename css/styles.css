@@ -684,8 +684,8 @@ img {
   left: 50%;
   padding: 40px;
 
-  min-width: 528px;
-  min-height: 581px;
+  width: 528px;
+  height: 581px;
   background-color: var(--bg-prime-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -694,7 +694,7 @@ img {
   transform: translate(-50%, -50%);
   transition: transform 300ms var(--timing-function);
 }
-/* ____СТИЛИ ФОРМЫ В МОДАЛЬНОМ ОКНЕ______________ */
+/* ______СТИЛИ ФОРМЫ В МОДАЛЬНОМ ОКНЕ______________ */
 .modal-title {
   font-weight: 700;
   font-size: 20px;
@@ -704,12 +704,25 @@ img {
 
   color: var(--text-title-color);
 }
+.form-modal-field {
+  margin-bottom: 10px;
+  transition: fill 250ms var(--timing-function);
+}
 .form-modal-input {
   width: 100%;
   height: 40px;
   padding: 12px 12px 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border-color 250ms var(--timing-function);
+}
+.form-modal-field input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+.form-modal-field:focus-within {
+  fill: var(--accent-color);
 }
 
 .form-modal-area {
@@ -717,23 +730,31 @@ img {
   resize: none;
   height: 120px;
   padding: 12px 16px;
-  margin-bottom: 20px;
 
-  font-size: 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border-color 250ms var(--timing-function);
+}
+.form-modal-comment textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
 }
 .form-modal-area::placeholder {
   font-family: inherit;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.17;
   letter-spacing: 0.01em;
 
   color: rgba(117, 117, 117, 0.5);
 }
-.form-modal-field {
+.input-wrap {
   position: relative;
-  margin-bottom: 10px;
+  display: block;
+}
+
+.form-modal-comment {
+  margin-bottom: 20px;
 }
 .icon-name {
   position: absolute;
@@ -742,23 +763,53 @@ img {
 }
 .form-modal-lable {
   display: block;
-  line-height: 1.17;
+  font-size: 12px;
+  line-height: 1.16;
   letter-spacing: 0.01em;
   margin-bottom: 4px;
 }
-
-.check-lable {
-  line-height: 1.7;
+.form-modal-comment textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
 }
-.form-contract {
+
+/* __________CHECKBOX_____________ */
+.form-modal-checkbox {
+  margin-bottom: 30px;
+}
+.check-lable a {
   text-decoration-line: underline;
   color: var(--accent-color);
+  padding-left: 4px;
+}
+
+.check-lable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.7;
+}
+.icon-check {
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--text-title-color);
+  border-radius: 2px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+
+.checkbox:checked + .check-lable > .icon-check {
+  border: none;
+  fill: var(--accent-color);
 }
 .modal-btn {
   display: block;
   margin: auto;
 }
-
+/* ____Button closed MODAL WINDOW_______ */
 .btn-closed {
   position: absolute;
   top: 8px;
