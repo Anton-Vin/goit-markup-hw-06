@@ -585,9 +585,10 @@ img {
 /* ------------------------FOOTER SOCIAL LINKS-------------------- */
 .footer-flex {
   display: flex;
+  align-items: baseline;
 }
 .coordinates {
-  width: 231px;
+  flex-grow: 1;
 }
 .subscribe {
   margin-left: 70px;
@@ -644,16 +645,13 @@ img {
   border-color: var(--bg-prime-color);
 }
 .sub_btn {
-  position: relative;
-
   display: inline-flex;
+  align-items: center;
   padding-left: 29px;
 }
 .icon_telegram {
-  position: absolute;
-
   display: inline-block;
-  right: 28px;
+  margin-left: 9px;
 }
 /*__________ МОДАЛЬНОЕ ОКНО____________ */
 .backdrop {
@@ -726,6 +724,7 @@ img {
 }
 
 .form-modal-area {
+  display: block;
   width: 100%;
   resize: none;
   height: 120px;
@@ -758,7 +757,8 @@ img {
 }
 .icon-name {
   position: absolute;
-  top: 11px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 12px;
 }
 .form-modal-lable {
@@ -788,6 +788,7 @@ img {
   justify-content: center;
   align-items: center;
   line-height: 1.7;
+  cursor: pointer;
 }
 .icon-check {
   width: 16px;
